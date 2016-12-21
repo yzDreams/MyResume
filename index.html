@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<title>jQuery可拖拽旋转的3D图片墙DEMO</title>
+	<link rel="stylesheet" href="./css/index.css"/>
+	<link rel="stylesheet" href="./css/swiper.min.css"/>
+	<link rel="stylesheet" href="./css/animate.css"/>
+	<link rel="stylesheet" href="./css/reset.min.css"/>
+	<link rel="stylesheet" href="./css/headCss.css">
+	<script>
+        var desW=640;
+        var winW=document.documentElement.clientWidth;
+        document.documentElement.style.fontSize =winW/desW*100+'px';
+	</script>
+
+<style type="text/css">
+	*{margin:0;padding: 0;}
+	html,body{
+
+	}
+	.pic{
+		width: 120px;
+		height: 180px;
+		margin: 220px auto 0;
+		position: relative;
+		/*transform 旋转元素*/
+		transform-style:preserve-3d;
+		transform:perspective(800px) rotateX(-10deg);
+	}
+	body{
+		background: url("./img/div6_bg.jpg") no-repeat center;
+	    background-size: 100% 100%;
+	     overflow: hidden}
+
+	.pic img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px #fff;
+		/*倒影的设置*/
+		-webkit-box-reflect:below 10px -webkit-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,.5) 100%);
+	}
+	.pic p{
+		width: 1200px;
+		height: 1200px;
+		background: -webkit-radial-gradient(center center,600px 600px,rgba(255,255,255,.5),rgba(0,0,0,0));
+		position: absolute;
+		top:100%;left:50%;
+		margin-top: -600px;
+		margin-left: -600px;
+		border-radius:600px;
+		transform:rotateX(90deg);
+	}
+
+   .pic img{
+	   background: white;
+   }
+</style>
+</head>
+<body>
+<div class="pic">
+	<img src="img/head1.png" />
+	<img src="img/head2.png" />
+	<img src="img/head3.png"/>
+	<img src="img/head4.png"/>
+	<img src="img/head5.png"/>
+	<p></p>
+</div>
+<div class="page">
+	<div class="swiper-slide div2">
+		<ul id="oDiv">
+			<li>每个人心中都有梦想的道路<br>，</li>
+			<li>只是我们没有地图<br>,</li>
+			<li>但我一直在寻找着<br>…</li>
+		</ul>
+		<p class="resume">我的简历</p>
+	</div>
+	<div class="swiper-slide div3">
+		<ul id="tables">
+			<li>
+				<table>
+					<tr>
+						<th>基本信息</th>
+					</tr>
+					<tr>
+						<td>我叫：</td>
+						<td>安俊宇</td>
+					</tr>
+					<tr>
+						<td>今年：</td>
+						<td>23</td>
+					</tr>
+					<tr>
+						<td>我是：</td>
+						<td>汉族人</td>
+					</tr>
+					<tr>
+						<td>来自：</td>
+						<td>河北邯郸</td>
+					</tr>
+					<tr>
+						<td>毕业学院：</td>
+						<td>珠峰培训</td>
+					</tr>
+					<tr>
+						<td>我喜欢：</td>
+						<td>看书，打篮球，旅游、、、</td>
+					</tr>
+				</table>
+			</li>
+
+			<img src="./img/headP2.png" alt="" class="headP"/>
+		</ul>
+		<img src="./img/keji2.png" alt="" class="text" />
+		<img src="./img/luoL.png" alt="" class="luoL"/>
+	</div>
+	<div class=" swiper-slide div5">
+		<ul>
+			<li class="div5_div2">
+				<img src="./img/div5_jiqiren.png" alt="" class="jiqiren"/>
+			</li>
+			<li class="div5_div">
+				<img src="img/div5_h5cs3.png" alt="" class="skill skill2 hC" index="0"/>
+				<img src="./img/div5_js.png" alt="" class="skill skill2 js" index="1"/>
+				<img src="./img/div5_aG.png" alt="" class="skill skill2 aG" index="2"/>
+
+				<p class="p1">&nbsp;&nbsp;&nbsp;&nbsp;熟练掌握 <b>html+css</b>布局,掌握 <b>HTML5+CSS3</b>,以及响应式布局和webApp的开发</p>
+				<p class="p2">&nbsp;&nbsp;&nbsp;&nbsp;熟练掌握 <b>javascript</b>,&nbsp;自己写过 <b>DOM、tween、Ajax</b>库等,&nbsp;以及熟练掌握各种设计模式.熟练使用 <b>jQuery、AngularJS、reactJS、zepto、iScroll</b>等类库以及框架</p>
+				<p class="p3">&nbsp;&nbsp;&nbsp;&nbsp;熟练使用 <b>nodeJS</b> 编写后台 <b>server,ajax,jsonp</b> 请求数据,&nbsp;对后台有一定的了解</p>
+			</li>
+			<li class="div5_jG">
+				<img src="./img/激光.png" alt="" class="jiguang">
+				<span class="pro-skill">专业技能</span>
+			</li>
+		</ul>
+	</div>
+	<div class="div8">
+
+		<p>
+			我之所以投身前端，不仅仅是因为它工资比较高，主要因为我对因为我对它感兴趣，喜欢js,它给我即写即得，即时展现，
+			<!--碰到喜欢的页面排版或者js特效，就有一种异常的动力驱使着我去了解它，-->
+			<!--一旦实现，就可以感觉到一种满足与成就感，而且比起后台来说更简单，轻便；-->
+		</p>
+
+		<p>
+			我是一小白，是众多前端蚂蚁中的一员，
+			但我对自己有信心，我有着较强的学习能力，能快速掌握新兴的技术，
+			有着较强的吃苦和创新能力；
+		</p>
+		<p>
+			虽然没有太多的实战经验，但我私下还是做过好几个pc端和移动端的项目，写过小米商城、
+			腾讯看比赛、猎豹、乐视体育···
+		</p>
+		<p>
+			您现在看到的只是我众多技能中的一方面的展现，我需要的是一个平台，
+			请给我一个
+		</p>
+		<i id="Invs"></i>
+	</div>
+	<div class=" swiper-slide div7">
+		<p>谢谢观看</p>
+		<ul>
+			<li>手机：15232898696</li>
+			<li>QQ：1142772052</li>
+			<li>邮箱：1142772052@qq.com</li>
+		</ul>
+	</div>
+
+	<span class="clone">
+		<img src="./img/iconset.png" alt="">
+	</span>
+</div>
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+var imgL=$(".pic img").size();
+var deg=360/imgL;
+var roY=0,roX=-10;
+ var xN=0,yN=0;
+ var play=null;
+var timer=null;
+    var div5=document.querySelector('.div5_div')
+        div5.addEventListener('touchstart',function (e) {
+            var aP=div5.querySelectorAll('p');
+            console.log(e.target.tagName)
+            if(e.target.tagName=='IMG'){
+
+                var index=e.target.getAttribute('index');
+                // console.log(aP[index].style.display)
+                for(var i=0;i<aP.length;i++){
+                    if(i==index){
+                        if(aP[i].style.display=='block'){
+                            aP[i].style.display='none';
+                        }else {
+                            aP[i].style.display='block';
+                        }
+
+                    }else {
+                        aP[i].style.display='none';
+                    }
+
+                }
+            }
+        });
+      $(".pic img").each(function(i){
+	   $(this).css({
+		<!--translateZ 定义2d旋转沿着z轴-->
+		"transform":"rotateY("+i*deg+"deg) translateZ(130px)"	});
+		   $(this).click(function () {
+		       /*让p的内容出事换隐藏 start*/
+               var div5=document.querySelector('.div5_div')
+               var aP=div5.querySelectorAll('p');
+               for(var j=0;j<aP.length;j++){
+                   aP[j].style.display='none';
+               }
+               /*end*/
+              $('.page div')[i].data= $('.page div')[i];
+              $('span')[1].style.display='block';
+              $('.page div')[i].style.display='block';
+		      clearTimeout(timer2);
+		      var timer2=setTimeout(function () {
+                  $('.page div').attr('id','page'+i);
+              },500);
+		      $('.clone').click(function () {
+                  $('.page div')[i].data.style.display='none';
+                  $('span')[1].style.display='none';
+		      })
+          });
+
+		$(this).attr('ondragstart','return false');
+
+	});
+	  document.addEventListener('touchstart',function(ev){
+	  ev=ev.changedTouches[0];
+	this.x_=ev.clientX;
+	clearInterval(play);
+		document.addEventListener('touchmove',function(ev){
+                 move.call(this,ev);
+		});
+	})
+	  function move(ev) {
+            ev=ev.changedTouches[0];
+            var x=ev.clientX;
+
+			/*两次坐标之间的距离*/
+            xN=x-this.x_;
+
+            document.a=ev
+            roY+=xN*0.05;
+
+
+            //$('body').append('<div style="width:5px;height:5px;position:absolute;top:'+y+'px;left:'+x+'px;background-color:red"></div>');
+
+            $('.pic').css({
+                transform:'perspective(800px) rotateY('+roY+'deg)'
+            });
+			/*之前的鼠标坐标*/
+			if(!timer){
+                timer=setInterval(function () {
+                    document.x_=document.a.clientX;
+
+                },50)
+			}
+
+
+        }
+	  document.addEventListener('touchend',function(){
+		       clearInterval(timer);
+		       timer=null;
+			  document.removeEventListener('touchmove',move);
+			  play=setInterval(function(){
+			   xN*=0.90;
+			   yN*=0.90;
+			   if(Math.abs(xN)<1 && Math.abs(yN)<1){
+				  clearInterval(play);
+			   }
+				roY+=xN*0.03;
+				roX-=yN*0.01;
+				$('.pic').css({
+					 transform:'perspective(800px)  rotateY('+roY+'deg)'
+				});
+
+		  },30);
+
+	});
+
+});
+//	$(document).addEventListener('click',function () {
+//	alert(1)
+//},false)
+</script>
+
+</body>
+</html>
